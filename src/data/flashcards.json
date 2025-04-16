@@ -1,0 +1,109 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "category": "arrays",
+      "difficulty": "easy",
+      "front": "What is an array?",
+      "back": "An array is a linear data structure that collects elements of the same data type and stores them in contiguous memory locations. Arrays have a fixed size in many programming languages."
+    },
+    {
+      "id": 2,
+      "category": "arrays",
+      "difficulty": "medium",
+      "front": "What is the time complexity of inserting an element at the end of an array?",
+      "back": "O(1) - constant time, assuming the array has space. If resizing is needed, it becomes O(n) due to copying elements to a new array."
+    },
+    {
+      "id": 3,
+      "category": "arrays",
+      "difficulty": "hard",
+      "front": "Describe the Kadane's algorithm for maximum subarray problem",
+      "back": "Kadane's algorithm finds the maximum sum subarray in O(n) time. It uses dynamic programming by keeping track of the maximum sum ending at each position and the global maximum sum found so far. For each element, we decide whether to start a new subarray or extend the existing one."
+    },
+    {
+      "id": 4,
+      "category": "linked lists",
+      "difficulty": "easy",
+      "front": "What is a linked list?",
+      "back": "A linked list is a linear data structure where each element (node) contains data and a reference to the next node in the sequence. Unlike arrays, linked lists don't require contiguous memory allocation."
+    },
+    {
+      "id": 5,
+      "category": "linked lists",
+      "difficulty": "medium",
+      "front": "How do you detect a cycle in a linked list?",
+      "back": "Floyd's Cycle-Finding Algorithm (Tortoise and Hare): Use two pointers that move at different speeds. The slow pointer moves one step at a time, while the fast pointer moves two steps. If there's a cycle, the fast pointer will eventually meet the slow pointer."
+    },
+    {
+      "id": 6,
+      "category": "stacks",
+      "difficulty": "easy",
+      "front": "What is a stack data structure?",
+      "back": "A stack is a linear data structure that follows the Last In First Out (LIFO) principle. The last element inserted is the first one to be removed. Main operations: push (insert) and pop (remove)."
+    },
+    {
+      "id": 7,
+      "category": "queues",
+      "difficulty": "easy",
+      "front": "What is a queue data structure?",
+      "back": "A queue is a linear data structure that follows the First In First Out (FIFO) principle. The first element inserted is the first one to be removed. Main operations: enqueue (insert) and dequeue (remove)."
+    },
+    {
+      "id": 8,
+      "category": "trees",
+      "difficulty": "medium",
+      "front": "What is a binary search tree?",
+      "back": "A binary search tree (BST) is a binary tree where for each node, all elements in the left subtree are less than the node's value, and all elements in the right subtree are greater. This property enables efficient searching, insertion, and deletion operations."
+    },
+    {
+      "id": 9,
+      "category": "graphs",
+      "difficulty": "medium",
+      "front": "What is the difference between BFS and DFS?",
+      "back": "Breadth-First Search (BFS) explores all neighbors at the current depth before moving to nodes at the next depth level, using a queue. Depth-First Search (DFS) explores as far as possible along each branch before backtracking, using a stack or recursion."
+    },
+    {
+      "id": 10,
+      "category": "sorting",
+      "difficulty": "easy",
+      "front": "What is the time complexity of Bubble Sort?",
+      "back": "Bubble Sort has a time complexity of O(n²) in the worst and average cases, where n is the number of elements. In the best case (already sorted array), it can be O(n) with optimization."
+    },
+    {
+      "id": 11,
+      "category": "sorting",
+      "difficulty": "medium",
+      "front": "How does Quick Sort work?",
+      "back": "Quick Sort uses a divide-and-conquer strategy. It selects a 'pivot' element and partitions the array so elements less than the pivot are on the left, and elements greater are on the right. The process is then recursively applied to the sub-arrays. Average time complexity: O(n log n)."
+    },
+    {
+      "id": 12,
+      "category": "big o notation",
+      "difficulty": "easy",
+      "front": "What does O(1) time complexity mean?",
+      "back": "O(1) represents constant time complexity, meaning the operation takes the same amount of time regardless of the input size. Examples include accessing an array element by index or adding/removing from a stack."
+    },
+    {
+      "id": 13,
+      "category": "big o notation",
+      "difficulty": "medium",
+      "front": "Compare O(n log n) and O(n²) time complexities",
+      "back": "O(n log n) is more efficient than O(n²) for large inputs. As input size increases, O(n²) algorithms (like Bubble Sort) become significantly slower than O(n log n) algorithms (like Merge Sort). For small inputs, the difference might be negligible."
+    },
+    {
+      "id": 14,
+      "category": "hashing",
+      "difficulty": "medium",
+      "front": "What is a hash collision and how can it be resolved?",
+      "back": "A hash collision occurs when two different inputs produce the same hash value. Resolution methods include: 1) Chaining: store colliding elements in the same bucket using a linked list, 2) Open addressing: find another empty spot in the hash table using probing methods like linear probing, quadratic probing, or double hashing."
+    },
+    {
+      "id": 15,
+      "category": "dynamic programming",
+      "difficulty": "hard",
+      "front": "What are the key characteristics of problems that can be solved using dynamic programming?",
+      "back": "Dynamic programming is applicable when problems have: 1) Optimal substructure: optimal solution can be constructed from optimal solutions of subproblems, 2) Overlapping subproblems: same subproblems are solved multiple times, making memoization or tabulation beneficial."
+    }
+  ]
+} 

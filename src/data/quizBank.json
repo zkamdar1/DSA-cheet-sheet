@@ -1,0 +1,424 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "topic": "arrays",
+      "difficulty": "easy",
+      "question": "What is the time complexity of accessing an element in an array by its index?",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(1)",
+        "O(n²)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Array access by index is a constant time O(1) operation because the memory address can be calculated directly from the index, regardless of the array size."
+    },
+    {
+      "id": 2,
+      "topic": "arrays",
+      "difficulty": "medium",
+      "question": "What is the time complexity of inserting an element at the beginning of an array?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "When inserting at the beginning of an array, all existing elements need to be shifted one position to the right, resulting in O(n) time complexity."
+    },
+    {
+      "id": 3,
+      "topic": "arrays",
+      "difficulty": "hard",
+      "question": "Which algorithm can find the maximum sum subarray in O(n) time?",
+      "options": [
+        "Binary Search",
+        "Kadane's Algorithm",
+        "Merge Sort",
+        "Depth-First Search"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Kadane's Algorithm can find the maximum sum subarray in O(n) time by efficiently tracking the maximum sum ending at each position and the global maximum sum."
+    },
+    {
+      "id": 4,
+      "topic": "linked-lists",
+      "difficulty": "easy",
+      "question": "What is the time complexity of inserting a node at the beginning of a singly linked list?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n²)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Inserting at the beginning of a linked list is an O(1) operation as we only need to update the head pointer and the next pointer of the new node."
+    },
+    {
+      "id": 5,
+      "topic": "linked-lists",
+      "difficulty": "medium",
+      "question": "Which method can detect a cycle in a linked list?",
+      "options": [
+        "Binary Search",
+        "Floyd's Cycle-Finding Algorithm",
+        "Breadth-First Search",
+        "Bubble Sort"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Floyd's Cycle-Finding Algorithm (also known as the 'tortoise and hare' algorithm) can detect cycles by using two pointers that move at different speeds."
+    },
+    {
+      "id": 6,
+      "topic": "linked-lists",
+      "difficulty": "hard",
+      "question": "How would you find the middle element of a singly linked list in one pass?",
+      "options": [
+        "Count all nodes and then traverse to the middle",
+        "Use two pointers, one moving twice as fast as the other",
+        "Convert the linked list to an array",
+        "Use a binary search approach"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Using the 'slow and fast pointer' technique where the fast pointer moves twice as fast as the slow pointer, when the fast pointer reaches the end, the slow pointer will be at the middle."
+    },
+    {
+      "id": 7,
+      "topic": "stacks",
+      "difficulty": "easy",
+      "question": "Which data structure follows the Last In, First Out (LIFO) principle?",
+      "options": [
+        "Queue",
+        "Stack",
+        "Tree",
+        "Graph"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A stack follows the Last In, First Out (LIFO) principle, meaning the last element added to the stack is the first one to be removed."
+    },
+    {
+      "id": 8,
+      "topic": "stacks",
+      "difficulty": "medium",
+      "question": "Which algorithm uses a stack to convert infix expressions to postfix?",
+      "options": [
+        "Dijkstra's Algorithm",
+        "Breadth-First Search",
+        "Shunting Yard Algorithm",
+        "Kadane's Algorithm"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Shunting Yard Algorithm, developed by Edsger Dijkstra, uses a stack to convert infix expressions (e.g., '2+3') to postfix expressions (e.g., '23+')."
+    },
+    {
+      "id": 9,
+      "topic": "stacks",
+      "difficulty": "hard",
+      "question": "What data structure would you use to implement an 'undo' functionality in a text editor?",
+      "options": [
+        "Queue",
+        "Stack",
+        "Binary Search Tree",
+        "Hash Table"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A stack is perfect for implementing 'undo' functionality because operations need to be undone in reverse order (last operation first), following the LIFO principle."
+    },
+    {
+      "id": 10,
+      "topic": "queues",
+      "difficulty": "easy",
+      "question": "Which principle does a queue follow?",
+      "options": [
+        "LIFO (Last In, First Out)",
+        "FIFO (First In, First Out)",
+        "Random Access",
+        "Indexed Access"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A queue follows the First In, First Out (FIFO) principle, where the first element added to the queue is the first one to be removed."
+    },
+    {
+      "id": 11,
+      "topic": "queues",
+      "difficulty": "medium",
+      "question": "Which algorithm typically uses a queue for traversal?",
+      "options": [
+        "Depth-First Search (DFS)",
+        "Breadth-First Search (BFS)",
+        "Binary Search",
+        "Quick Sort"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Breadth-First Search (BFS) uses a queue to explore all neighbors at the current depth before moving to nodes at the next depth level."
+    },
+    {
+      "id": 12,
+      "topic": "queues",
+      "difficulty": "hard",
+      "question": "Which of these is NOT a valid type of queue?",
+      "options": [
+        "Circular Queue",
+        "Priority Queue",
+        "Deque (Double-ended Queue)",
+        "Last-Value Queue"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Last-Value Queue' is not a standard queue type. The other options—Circular Queue, Priority Queue, and Deque—are all valid queue variants with specific use cases."
+    },
+    {
+      "id": 13,
+      "topic": "trees",
+      "difficulty": "easy",
+      "question": "What is the maximum number of nodes at level 'i' in a binary tree?",
+      "options": [
+        "i",
+        "i²",
+        "2ⁱ",
+        "2ⁱ - 1"
+      ],
+      "correctAnswer": 2,
+      "explanation": "In a binary tree, each node can have at most 2 children. At level i (with root at level 0), the maximum number of nodes is 2ⁱ."
+    },
+    {
+      "id": 14,
+      "topic": "trees",
+      "difficulty": "medium",
+      "question": "Which traversal visits the root node between the left and right subtrees?",
+      "options": [
+        "Pre-order",
+        "In-order",
+        "Post-order",
+        "Level-order"
+      ],
+      "correctAnswer": 1,
+      "explanation": "In-order traversal visits nodes in the order: left subtree, root node, right subtree. This produces sorted output for a binary search tree."
+    },
+    {
+      "id": 15,
+      "topic": "trees",
+      "difficulty": "hard",
+      "question": "What is the time complexity of finding the lowest common ancestor in a binary tree?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n²)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Finding the lowest common ancestor in a binary tree typically requires traversing the tree once, which has a time complexity of O(n), where n is the number of nodes."
+    },
+    {
+      "id": 16,
+      "topic": "graphs",
+      "difficulty": "easy",
+      "question": "Which of these is NOT a type of graph?",
+      "options": [
+        "Directed Graph",
+        "Undirected Graph",
+        "Sequential Graph",
+        "Weighted Graph"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Sequential Graph' is not a standard type of graph. The other options—Directed, Undirected, and Weighted Graphs—are all common graph types."
+    },
+    {
+      "id": 17,
+      "topic": "graphs",
+      "difficulty": "medium",
+      "question": "Which algorithm finds the shortest path in an unweighted graph?",
+      "options": [
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Dijkstra's Algorithm",
+        "Bellman-Ford Algorithm"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Breadth-First Search (BFS) can find the shortest path in an unweighted graph by exploring all neighbors at the current depth before moving to the next depth level."
+    },
+    {
+      "id": 18,
+      "topic": "graphs",
+      "difficulty": "hard",
+      "question": "What is the time complexity of Dijkstra's algorithm with a min-heap implementation?",
+      "options": [
+        "O(V²)",
+        "O(E log V)",
+        "O(V + E)",
+        "O(V log V + E log V)"
+      ],
+      "correctAnswer": 3,
+      "explanation": "With a min-heap implementation, Dijkstra's algorithm has a time complexity of O(V log V + E log V), which can be simplified to O((V + E) log V), where V is the number of vertices and E is the number of edges."
+    },
+    {
+      "id": 19,
+      "topic": "sorting",
+      "difficulty": "easy",
+      "question": "Which sorting algorithm has the best average-case time complexity?",
+      "options": [
+        "Bubble Sort - O(n²)",
+        "Insertion Sort - O(n²)",
+        "Selection Sort - O(n²)",
+        "Merge Sort - O(n log n)"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Merge Sort has an average-case time complexity of O(n log n), which is better than the O(n²) complexity of Bubble, Insertion, and Selection sorts."
+    },
+    {
+      "id": 20,
+      "topic": "sorting",
+      "difficulty": "medium",
+      "question": "Which of these sorting algorithms is not stable?",
+      "options": [
+        "Bubble Sort",
+        "Insertion Sort",
+        "Quick Sort",
+        "Merge Sort"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Quick Sort is not stable, meaning the relative order of equal elements may change during sorting. The other algorithms mentioned are stable sorts."
+    },
+    {
+      "id": 21,
+      "topic": "sorting",
+      "difficulty": "hard",
+      "question": "What is the time complexity of Radix Sort?",
+      "options": [
+        "O(n log n)",
+        "O(n + k) where k is the range of the input",
+        "O(d(n + k)) where d is the number of digits and k is the range of a digit",
+        "O(n²)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Radix Sort has a time complexity of O(d(n + k)), where d is the number of digits, n is the number of elements, and k is the range of a digit (usually 10 for decimal). It's a linear time algorithm for fixed d and k."
+    },
+    {
+      "id": 22,
+      "topic": "searching",
+      "difficulty": "easy",
+      "question": "What is the time complexity of linear search?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Linear search examines each element sequentially until finding the target, resulting in a time complexity of O(n) in the worst case."
+    },
+    {
+      "id": 23,
+      "topic": "searching",
+      "difficulty": "medium",
+      "question": "Which condition must be met to perform a binary search?",
+      "options": [
+        "The data must be in a linked list",
+        "The data must be sorted",
+        "The data must have duplicate elements",
+        "The data must be stored in a hash table"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Binary search requires the data to be sorted because it repeatedly divides the search interval in half by comparing the middle element with the target value."
+    },
+    {
+      "id": 24,
+      "topic": "searching",
+      "difficulty": "hard",
+      "question": "What is the time complexity of searching in a balanced binary search tree?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Searching in a balanced binary search tree has a time complexity of O(log n) because each comparison eliminates half of the remaining elements from consideration."
+    },
+    {
+      "id": 25,
+      "topic": "dynamic-programming",
+      "difficulty": "easy",
+      "question": "What are the two key properties of problems that can be solved using dynamic programming?",
+      "options": [
+        "Linear structure and binary operations",
+        "Tree-like structure and recursive solution",
+        "Optimal substructure and overlapping subproblems",
+        "Greedy choice property and matroid structure"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Dynamic programming is applicable when problems have optimal substructure (an optimal solution can be constructed from optimal solutions of subproblems) and overlapping subproblems (the same subproblems are solved multiple times)."
+    },
+    {
+      "id": 26,
+      "topic": "dynamic-programming",
+      "difficulty": "medium",
+      "question": "What is the time complexity of the dynamic programming solution for the Fibonacci sequence?",
+      "options": [
+        "O(2ⁿ)",
+        "O(n²)",
+        "O(n log n)",
+        "O(n)"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The dynamic programming solution for the Fibonacci sequence computes each Fibonacci number exactly once and stores it in a table, resulting in a time complexity of O(n)."
+    },
+    {
+      "id": 27,
+      "topic": "dynamic-programming",
+      "difficulty": "hard",
+      "question": "Which of these problems CANNOT be solved using dynamic programming?",
+      "options": [
+        "Longest Common Subsequence",
+        "0/1 Knapsack Problem",
+        "Finding all prime numbers up to n",
+        "Longest Increasing Subsequence"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Finding all prime numbers up to n (typically solved using the Sieve of Eratosthenes) lacks the overlapping subproblems property required for dynamic programming. The other problems are classic dynamic programming problems."
+    },
+    {
+      "id": 28,
+      "topic": "recursion",
+      "difficulty": "easy",
+      "question": "What is the base case in a recursive function?",
+      "options": [
+        "The case that causes a stack overflow",
+        "The case that calls itself",
+        "The case that doesn't involve a recursive call and terminates the recursion",
+        "The case that uses the most memory"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The base case in a recursive function is the condition that doesn't involve any further recursive calls and provides the termination point for the recursion."
+    },
+    {
+      "id": 29,
+      "topic": "recursion",
+      "difficulty": "medium",
+      "question": "What is tail recursion?",
+      "options": [
+        "A recursion where the recursive call is the first operation",
+        "A recursion that causes stack overflow",
+        "A recursion where the recursive call is the last operation and no computation is needed after it returns",
+        "A recursion with multiple base cases"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Tail recursion is a special case of recursion where the recursive call is the last operation in the function, and no additional computation is performed after the recursive call returns. This can often be optimized by compilers into iteration."
+    },
+    {
+      "id": 30,
+      "topic": "recursion",
+      "difficulty": "hard",
+      "question": "Which technique can be used to solve the Tower of Hanoi problem efficiently?",
+      "options": [
+        "Dynamic Programming",
+        "Greedy Algorithm",
+        "Divide and Conquer with Recursion",
+        "Linear Programming"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Tower of Hanoi problem is classically solved using a divide and conquer approach with recursion. The problem is broken down into moving a tower of n-1 disks, moving the largest disk, and then moving the tower of n-1 disks again."
+    }
+  ]
+} 

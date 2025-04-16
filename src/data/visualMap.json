@@ -1,0 +1,209 @@
+{
+  "title": "DSA Galaxy Map",
+  "description": "A visual map of data structures and algorithms topics",
+  "nodes": [
+    {
+      "id": "arrays",
+      "label": "Arrays",
+      "radius": 70,
+      "color": "#4285F4",
+      "x": 300,
+      "y": 200,
+      "locked": true,
+      "type": "dataStructure"
+    },
+    {
+      "id": "linked-lists",
+      "label": "Linked Lists",
+      "radius": 60,
+      "color": "#34A853",
+      "x": 500,
+      "y": 300,
+      "locked": false,
+      "type": "dataStructure"
+    },
+    {
+      "id": "stacks",
+      "label": "Stacks",
+      "radius": 50,
+      "color": "#FBBC05",
+      "x": 700,
+      "y": 200,
+      "locked": false,
+      "type": "dataStructure"
+    },
+    {
+      "id": "queues",
+      "label": "Queues",
+      "radius": 50,
+      "color": "#EA4335",
+      "x": 700,
+      "y": 400,
+      "locked": false,
+      "type": "dataStructure"
+    },
+    {
+      "id": "hash-tables",
+      "label": "Hash Tables",
+      "radius": 65,
+      "color": "#8F44AD",
+      "x": 500,
+      "y": 500,
+      "locked": false,
+      "type": "dataStructure"
+    },
+    {
+      "id": "trees",
+      "label": "Trees",
+      "radius": 65,
+      "color": "#16A085",
+      "x": 300,
+      "y": 400,
+      "locked": false,
+      "type": "dataStructure"
+    },
+    {
+      "id": "graphs",
+      "label": "Graphs",
+      "radius": 70,
+      "color": "#F39C12",
+      "x": 150,
+      "y": 600,
+      "locked": false,
+      "type": "dataStructure"
+    },
+    {
+      "id": "heaps",
+      "label": "Heaps",
+      "radius": 55,
+      "color": "#E74C3C",
+      "x": 400,
+      "y": 650,
+      "locked": false,
+      "type": "dataStructure"
+    },
+    {
+      "id": "sorting",
+      "label": "Sorting",
+      "radius": 60,
+      "color": "#3498DB",
+      "x": 900,
+      "y": 300,
+      "locked": false,
+      "type": "algorithm"
+    },
+    {
+      "id": "searching",
+      "label": "Searching",
+      "radius": 60,
+      "color": "#2ECC71",
+      "x": 900,
+      "y": 500,
+      "locked": false,
+      "type": "algorithm"
+    },
+    {
+      "id": "dynamic-programming",
+      "label": "Dynamic Programming",
+      "radius": 75,
+      "color": "#9B59B6",
+      "x": 600,
+      "y": 650,
+      "locked": false,
+      "type": "algorithm"
+    },
+    {
+      "id": "recursion",
+      "label": "Recursion",
+      "radius": 55,
+      "color": "#1ABC9C",
+      "x": 800,
+      "y": 650,
+      "locked": false,
+      "type": "algorithm"
+    },
+    {
+      "id": "greedy",
+      "label": "Greedy Algorithms",
+      "radius": 60,
+      "color": "#F1C40F",
+      "x": 1000,
+      "y": 600,
+      "locked": false,
+      "type": "algorithm"
+    },
+    {
+      "id": "backtracking",
+      "label": "Backtracking",
+      "radius": 55,
+      "color": "#E67E22",
+      "x": 1100,
+      "y": 400,
+      "locked": false,
+      "type": "algorithm"
+    },
+    {
+      "id": "patterns",
+      "label": "Problem Patterns",
+      "radius": 70,
+      "color": "#27AE60",
+      "x": 900,
+      "y": 150,
+      "locked": false,
+      "type": "concept"
+    },
+    {
+      "id": "complexity",
+      "label": "Complexity Analysis",
+      "radius": 65,
+      "color": "#C0392B",
+      "x": 600,
+      "y": 100,
+      "locked": false,
+      "type": "concept"
+    }
+  ],
+  "links": [
+    { "source": "arrays", "target": "sorting", "type": "uses", "width": 2 },
+    { "source": "arrays", "target": "searching", "type": "uses", "width": 2 },
+    { "source": "arrays", "target": "linked-lists", "type": "related", "width": 1 },
+    { "source": "linked-lists", "target": "stacks", "type": "implements", "width": 2 },
+    { "source": "linked-lists", "target": "queues", "type": "implements", "width": 2 },
+    { "source": "arrays", "target": "hash-tables", "type": "implements", "width": 1 },
+    { "source": "trees", "target": "recursion", "type": "uses", "width": 3 },
+    { "source": "trees", "target": "graphs", "type": "related", "width": 2 },
+    { "source": "trees", "target": "heaps", "type": "parent", "width": 2 },
+    { "source": "graphs", "target": "searching", "type": "uses", "width": 2 },
+    { "source": "dynamic-programming", "target": "recursion", "type": "related", "width": 3 },
+    { "source": "backtracking", "target": "recursion", "type": "uses", "width": 3 },
+    { "source": "backtracking", "target": "dynamic-programming", "type": "related", "width": 2 },
+    { "source": "greedy", "target": "dynamic-programming", "type": "alternative", "width": 2 },
+    { "source": "sorting", "target": "searching", "type": "related", "width": 2 },
+    { "source": "patterns", "target": "arrays", "type": "encompasses", "width": 1 },
+    { "source": "patterns", "target": "trees", "type": "encompasses", "width": 1 },
+    { "source": "patterns", "target": "graphs", "type": "encompasses", "width": 1 },
+    { "source": "complexity", "target": "sorting", "type": "analyzes", "width": 1 },
+    { "source": "complexity", "target": "searching", "type": "analyzes", "width": 1 },
+    { "source": "complexity", "target": "dynamic-programming", "type": "analyzes", "width": 1 }
+  ],
+  "clusters": [
+    {
+      "id": "data-structures",
+      "label": "Data Structures",
+      "nodes": ["arrays", "linked-lists", "stacks", "queues", "hash-tables", "trees", "graphs", "heaps"],
+      "color": "#E8F5E9"
+    },
+    {
+      "id": "algorithms",
+      "label": "Algorithms",
+      "nodes": ["sorting", "searching", "dynamic-programming", "recursion", "greedy", "backtracking"],
+      "color": "#E3F2FD"
+    },
+    {
+      "id": "meta-concepts",
+      "label": "Meta Concepts",
+      "nodes": ["patterns", "complexity"],
+      "color": "#FFF3E0"
+    }
+  ]
+} 
