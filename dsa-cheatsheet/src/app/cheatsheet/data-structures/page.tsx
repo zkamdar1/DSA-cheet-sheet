@@ -1,6 +1,5 @@
 "use client"
 
-import { SectionTabs } from "@/components/SectionTabs"
 import { DiagramBox } from "@/components/DiagramBox"
 import { CodeBlock } from "@/components/CodeBlock"
 import { useHashNavigation } from "@/lib/use-hash-navigation"

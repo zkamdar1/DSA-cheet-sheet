@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dsa-cheatsheet.yourdomain.com/</loc>
+    <loc>https://dsa-cheetsheet.vercel.app/</loc>
     <lastmod>2023-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://dsa-cheatsheet.yourdomain.com/cheatsheet/introduction</loc>
+    <loc>https://dsa-cheetsheet.vercel.app/cheatsheet/introduction</loc>
     <lastmod>2023-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dsa-cheatsheet.yourdomain.com/cheatsheet/data-structures</loc>
+    <loc>https://dsa-cheetsheet.vercel.app/cheatsheet/data-structures</loc>
     <lastmod>2023-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dsa-cheatsheet.yourdomain.com/cheatsheet/algorithms</loc>
+    <loc>https://dsa-cheetsheet.vercel.app/cheatsheet/algorithms</loc>
     <lastmod>2023-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dsa-cheatsheet.yourdomain.com/cheatsheet/big-o-notation</loc>
+    <loc>https://dsa-cheetsheet.vercel.app/cheatsheet/big-o-notation</loc>
     <lastmod>2023-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dsa-cheatsheet.yourdomain.com/cheatsheet/patterns</loc>
+    <loc>https://dsa-cheetsheet.vercel.app/cheatsheet/patterns</loc>
     <lastmod>2023-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dsa-cheatsheet.yourdomain.com/cheatsheet/strategies</loc>
+    <loc>https://dsa-cheetsheet.vercel.app/cheatsheet/strategies</loc>
     <lastmod>2023-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dsa-cheatsheet.yourdomain.com/cheatsheet/practice</loc>
+    <loc>https://dsa-cheetsheet.vercel.app/cheatsheet/practice</loc>
     <lastmod>2023-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://dsa-cheatsheet.yourdomain.com/sitemap.xml 
+Sitemap: https://dsa-cheetsheet.vercel.app/sitemap.xml 

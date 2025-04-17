@@ -20,7 +20,7 @@
 # production
 /build
 /dist  # Next.js export directory configured in next.config.mjs
-
+/dist/cache
 # misc
 .DS_Store
 *.pem

@@ -690,7 +690,7 @@ factorial(5)
                       <p>Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, ...</p>
                       <p>F(0) = 0</p>
                       <p>F(1) = 1</p>
-                      <p>F(n) = F(n-1) + F(n-2) for n > 1</p>
+                      <p>F(n) = F(n-1) + F(n-2) for n {`>`} 1</p>
                     </div>
                   </div>
                   

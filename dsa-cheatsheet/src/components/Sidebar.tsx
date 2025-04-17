@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo, useCallback } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Book, BookOpen, Brain, Code, GitFork, Home, ListTree, Lightbulb, Dumbbell, Menu, X } from "lucide-react"
+import { BookOpen, Brain, Code, GitFork, Home, ListTree, Lightbulb, Dumbbell, Menu } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "@/components/ThemeToggle"
@@ -11,9 +11,7 @@ import { Button } from "@/components/ui/button"
 import { SearchCommand } from "@/components/SearchCommand"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
-interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export function Sidebar({ className, ...props }: SidebarProps) {
+export function Sidebar({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   // All hooks must be called at the top level
   const pathname = usePathname()
   const [isMounted, setIsMounted] = useState(false)

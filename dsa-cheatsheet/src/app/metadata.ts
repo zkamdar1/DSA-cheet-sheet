@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 const siteConfig = {
   name: 'DSA Cheatsheet',
   description: 'A comprehensive cheatsheet for data structures and algorithms',
-  url: 'https://dsa-cheatsheet.yourdomain.com', // Replace with your actual domain
+  url: 'https://dsa-cheetsheet.vercel.app', // Updated with actual deployed URL
   ogImage: '/og-image.png',
 };
 
