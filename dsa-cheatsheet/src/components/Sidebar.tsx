@@ -141,7 +141,7 @@ export function Sidebar({ className, ...props }: React.HTMLAttributes<HTMLDivEle
             </h2>
             <ThemeToggle />
           </div>
-          <div className="px-4 py-2">
+          <div className="px-3 py-1">
             <SearchCommand categories={searchCategories} />
           </div>
         </div>

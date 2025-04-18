@@ -147,6 +147,234 @@ print(sorted_arr)  # [11, 12, 22, 25, 34, 64, 90]`}
                   </div>
                 </TabsContent>
                 
+                {/* Insertion Sort */}
+                <TabsContent value="insertion-sort" className="space-y-4 mt-4">
+                  <div className="flex justify-between items-start">
+                    <div className="space-y-2">
+                      <h3 className="font-medium">Insertion Sort</h3>
+                      <p>A simple sorting algorithm that builds the final sorted array one item at a time, similar to how we sort playing cards in our hands.</p>
+                    </div>
+                    <div className="bg-muted px-3 py-1 rounded text-sm">
+                      <div>Time: <span className="font-medium">O(n²)</span></div>
+                      <div>Space: <span className="font-medium">O(1)</span></div>
+                      <div>Stable: <span className="font-medium">Yes</span></div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">How It Works</h4>
+                    <ol className="list-decimal pl-6 space-y-1 text-sm">
+                      <li>Start with the second element (assume the first element is already sorted)</li>
+                      <li>Compare the current element with the previous elements</li>
+                      <li>If the previous element is greater, move it one position ahead</li>
+                      <li>Continue moving previous elements until finding the correct position for the current element</li>
+                      <li>Insert the current element in its correct position</li>
+                      <li>Repeat steps 2-5 for all elements in the array</li>
+                    </ol>
+                  </div>
+                  
+                  <DiagramBox 
+                    title="Insertion Sort Visualization"
+                    diagram={`
+Initial array: [5, 2, 4, 6, 1, 3]
+
+Pass 1: Consider element at index 1 (value 2)
+[5, 2, 4, 6, 1, 3] → [2, 5, 4, 6, 1, 3]
+ ^  ^
+ |  |
+ Compare 5 > 2, shift 5 right and insert 2
+
+Pass 2: Consider element at index 2 (value 4)
+[2, 5, 4, 6, 1, 3] → [2, 4, 5, 6, 1, 3]
+    ^  ^
+    |  |
+    Compare 5 > 4, shift 5 right and insert 4
+
+Pass 3: Consider element at index 3 (value 6)
+[2, 4, 5, 6, 1, 3] → [2, 4, 5, 6, 1, 3]
+       ^  ^
+       |  |
+       Compare 5 < 6, keep 6 in place
+
+Pass 4: Consider element at index 4 (value 1)
+[2, 4, 5, 6, 1, 3] → [1, 2, 4, 5, 6, 3]
+          ^  ^
+          |  |
+          Compare and shift until 1 is in correct position
+
+Pass 5: Consider element at index 5 (value 3)
+[1, 2, 4, 5, 6, 3] → [1, 2, 3, 4, 5, 6]
+             ^  ^
+             |  |
+             Compare and shift until 3 is in correct position
+
+Final sorted array: [1, 2, 3, 4, 5, 6]
+`}
+                  />
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Python Implementation</h4>
+                    <CodeBlock 
+                      language="python"
+                      code={`def insertion_sort(arr):
+    # Traverse through 1 to len(arr)
+    for i in range(1, len(arr)):
+        key = arr[i]
+        
+        # Move elements of arr[0..i-1], that are greater than key,
+        # to one position ahead of their current position
+        j = i - 1
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+    
+    return arr
+
+# Example usage
+arr = [5, 2, 4, 6, 1, 3]
+sorted_arr = insertion_sort(arr)
+print(sorted_arr)  # [1, 2, 3, 4, 5, 6]`}
+                    />
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Pros and Cons</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-xs font-medium mb-1">Advantages</h5>
+                        <ul className="list-disc pl-6 space-y-1 text-sm">
+                          <li>Simple implementation</li>
+                          <li>Efficient for small data sets</li>
+                          <li>More efficient than bubble sort</li>
+                          <li>Adaptive (performs well for partially sorted arrays)</li>
+                          <li>Stable sorting algorithm</li>
+                          <li>In-place sorting (O(1) extra space)</li>
+                          <li>Online algorithm (can sort as data arrives)</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-xs font-medium mb-1">Disadvantages</h5>
+                        <ul className="list-disc pl-6 space-y-1 text-sm">
+                          <li>Inefficient for large data sets (O(n²))</li>
+                          <li>Much slower than advanced algorithms like quicksort, heapsort, or merge sort</li>
+                          <li>Requires many element shifts in worst case</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </TabsContent>
+                
+                {/* Selection Sort */}
+                <TabsContent value="selection-sort" className="space-y-4 mt-4">
+                  <div className="flex justify-between items-start">
+                    <div className="space-y-2">
+                      <h3 className="font-medium">Selection Sort</h3>
+                      <p>A simple comparison-based sorting algorithm that divides the input into a sorted and an unsorted region, repeatedly selecting the smallest element from the unsorted region and moving it to the sorted region.</p>
+                    </div>
+                    <div className="bg-muted px-3 py-1 rounded text-sm">
+                      <div>Time: <span className="font-medium">O(n²)</span></div>
+                      <div>Space: <span className="font-medium">O(1)</span></div>
+                      <div>Stable: <span className="font-medium">No</span></div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">How It Works</h4>
+                    <ol className="list-decimal pl-6 space-y-1 text-sm">
+                      <li>Find the minimum element in the unsorted array</li>
+                      <li>Swap it with the first element of the unsorted part</li>
+                      <li>Move the boundary between the sorted and unsorted regions one element to the right</li>
+                      <li>Repeat until the entire array is sorted</li>
+                    </ol>
+                  </div>
+                  
+                  <DiagramBox 
+                    title="Selection Sort Visualization"
+                    diagram={`
+Initial array: [64, 25, 12, 22, 11]
+
+Pass 1: Find minimum in positions 0-4
+[64, 25, 12, 22, 11] → [11, 25, 12, 22, 64]
+ ^           ^
+ |           |
+ Position   Minimum found (11), swap with first element
+
+Pass 2: Find minimum in positions 1-4
+[11, 25, 12, 22, 64] → [11, 12, 25, 22, 64]
+     ^   ^
+     |   |
+     Position   Minimum found (12), swap with second element
+
+Pass 3: Find minimum in positions 2-4
+[11, 12, 25, 22, 64] → [11, 12, 22, 25, 64]
+         ^  ^
+         |  |
+         Position   Minimum found (22), swap with third element
+
+Pass 4: Find minimum in positions 3-4
+[11, 12, 22, 25, 64] → [11, 12, 22, 25, 64]
+             ^  ^
+             |  |
+             Position   Minimum found (25), already in position
+
+Final sorted array: [11, 12, 22, 25, 64]
+`}
+                  />
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Python Implementation</h4>
+                    <CodeBlock 
+                      language="python"
+                      code={`def selection_sort(arr):
+    n = len(arr)
+    
+    # Traverse through all array elements
+    for i in range(n):
+        # Find the minimum element in remaining unsorted array
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+                
+        # Swap the found minimum element with the first element
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    
+    return arr
+
+# Example usage
+arr = [64, 25, 12, 22, 11]
+sorted_arr = selection_sort(arr)
+print(sorted_arr)  # [11, 12, 22, 25, 64]`}
+                    />
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Pros and Cons</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-xs font-medium mb-1">Advantages</h5>
+                        <ul className="list-disc pl-6 space-y-1 text-sm">
+                          <li>Simple implementation</li>
+                          <li>In-place sorting (O(1) extra space)</li>
+                          <li>Performs well on small arrays</li>
+                          <li>Minimizes the number of swaps (O(n) swaps)</li>
+                          <li>Works well when memory write is costly</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-xs font-medium mb-1">Disadvantages</h5>
+                        <ul className="list-disc pl-6 space-y-1 text-sm">
+                          <li>Inefficient for large lists (O(n²))</li>
+                          <li>Does not adapt to the data (performs the same regardless of initial order)</li>
+                          <li>Not stable (may change the relative order of equal elements)</li>
+                          <li>Generally performs worse than insertion sort</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </TabsContent>
+                
                 {/* Merge Sort */}
                 <TabsContent value="merge-sort" className="space-y-4 mt-4">
                   <div className="flex justify-between items-start">
@@ -261,7 +489,140 @@ print(sorted_arr)  # [3, 9, 10, 27, 38, 43, 82]`}
                   </div>
                 </TabsContent>
                 
-                {/* Other sorting algorithms would go here */}
+                {/* Quick Sort */}
+                <TabsContent value="quick-sort" className="space-y-4 mt-4">
+                  <div className="flex justify-between items-start">
+                    <div className="space-y-2">
+                      <h3 className="font-medium">Quick Sort</h3>
+                      <p>An efficient, divide-and-conquer sorting algorithm that selects a 'pivot' element and partitions the array around the pivot, recursively sorting the subarrays.</p>
+                    </div>
+                    <div className="bg-muted px-3 py-1 rounded text-sm">
+                      <div>Time: <span className="font-medium">O(n log n) average, O(n²) worst</span></div>
+                      <div>Space: <span className="font-medium">O(log n)</span></div>
+                      <div>Stable: <span className="font-medium">No</span></div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">How It Works</h4>
+                    <ol className="list-decimal pl-6 space-y-1 text-sm">
+                      <li>Select a pivot element from the array</li>
+                      <li>Partition the array: reorder it so that elements smaller than the pivot come before it, and elements greater than the pivot come after it</li>
+                      <li>After partitioning, the pivot is in its final sorted position</li>
+                      <li>Recursively apply the above steps to the sub-arrays formed on the left and right of the pivot</li>
+                    </ol>
+                  </div>
+                  
+                  <DiagramBox 
+                    title="Quick Sort Visualization"
+                    diagram={`
+Original array: [10, 7, 8, 9, 1, 5]
+Choose last element as pivot: 5
+
+First Partition:
+[10, 7, 8, 9, 1, 5] → [1, | 5 | 10, 7, 8, 9]
+                  ^
+                  |
+                 Pivot
+After rearranging elements around pivot:
+[1, | 5 | 10, 7, 8, 9]
+    |
+  Pivot in final position
+
+Recursively sort left subarray [1]:
+Already sorted (single element)
+
+Recursively sort right subarray [10, 7, 8, 9]:
+Choose last element as pivot: 9
+[10, 7, 8, 9] → [7, 8, | 9 | 10]
+
+Continue recursively for remaining subarrays:
+[7, 8] → [7, 8]
+[10] → [10]
+
+Final sorted array: [1, 5, 7, 8, 9, 10]
+`}
+                  />
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Python Implementation</h4>
+                    <CodeBlock 
+                      language="python"
+                      code={`def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    # Helper function to perform the partition
+    def partition(arr, low, high):
+        # Choose the rightmost element as pivot
+        pivot = arr[high]
+        
+        # Pointer for greater element
+        i = low - 1
+        
+        # Compare each element with pivot
+        for j in range(low, high):
+            if arr[j] <= pivot:
+                # If element smaller than pivot is found, swap it with the greater element
+                i += 1
+                arr[i], arr[j] = arr[j], arr[i]
+        
+        # Swap the pivot element with the greater element at i
+        arr[i + 1], arr[high] = arr[high], arr[i + 1]
+        
+        # Return the position where partition is done
+        return i + 1
+    
+    # Function to implement quick sort
+    def quick_sort_helper(arr, low, high):
+        if low < high:
+            # Find pivot element such that
+            # elements smaller than pivot are on the left
+            # elements greater than pivot are on the right
+            pi = partition(arr, low, high)
+            
+            # Recursively sort elements before and after partition
+            quick_sort_helper(arr, low, pi - 1)
+            quick_sort_helper(arr, pi + 1, high)
+    
+    # Make a copy of the array to avoid modifying the original
+    result = arr.copy()
+    # Call the helper function
+    quick_sort_helper(result, 0, len(result) - 1)
+    return result
+
+# Example usage
+arr = [10, 7, 8, 9, 1, 5]
+sorted_arr = quick_sort(arr)
+print(sorted_arr)  # [1, 5, 7, 8, 9, 10]`}
+                    />
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Pros and Cons</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-xs font-medium mb-1">Advantages</h5>
+                        <ul className="list-disc pl-6 space-y-1 text-sm">
+                          <li>Very efficient on average (O(n log n))</li>
+                          <li>In-place sorting (requires small additional space)</li>
+                          <li>Cache friendly (good locality of reference)</li>
+                          <li>Tail-recursive, can be optimized</li>
+                          <li>Often faster in practice than other O(n log n) algorithms</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-xs font-medium mb-1">Disadvantages</h5>
+                        <ul className="list-disc pl-6 space-y-1 text-sm">
+                          <li>Worst-case time complexity is O(n²)</li>
+                          <li>Not stable (may change the relative order of equal elements)</li>
+                          <li>Performance depends on pivot selection</li>
+                          <li>Less efficient for nearly sorted arrays without good pivot</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </TabsContent>
               </Tabs>
             </CardContent>
           </Card>
@@ -511,6 +872,332 @@ print(f"Element found at index: {result}")  # Element found at index: 5`}
                           <li>Sorting may add overhead if array changes frequently</li>
                           <li>Not efficient for small datasets compared to linear search</li>
                           <li>Works only on arrays that support random access</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </TabsContent>
+                
+                {/* Depth-First Search */}
+                <TabsContent value="depth-first" className="space-y-4 mt-4">
+                  <div className="flex justify-between items-start">
+                    <div className="space-y-2">
+                      <h3 className="font-medium">Depth-First Search (DFS)</h3>
+                      <p>A graph traversal algorithm that explores as far as possible along each branch before backtracking, often implemented using recursion or a stack.</p>
+                    </div>
+                    <div className="bg-muted px-3 py-1 rounded text-sm">
+                      <div>Time: <span className="font-medium">O(V + E)</span></div>
+                      <div>Space: <span className="font-medium">O(V)</span></div>
+                      <div>V = vertices, E = edges</div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">How It Works</h4>
+                    <ol className="list-decimal pl-6 space-y-1 text-sm">
+                      <li>Start at a source vertex</li>
+                      <li>Mark the current vertex as visited</li>
+                      <li>Recursively visit each unvisited adjacent vertex</li>
+                      <li>Backtrack when all adjacent vertices have been visited</li>
+                    </ol>
+                  </div>
+                  
+                  <DiagramBox 
+                    title="DFS Visualization"
+                    diagram={`
+Graph:
+    A --- B
+    |     |
+    |     |
+    C --- D
+    |
+    |
+    E --- F
+
+DFS starting from A:
+1. Visit A, mark as visited
+2. Visit B (A's neighbor), mark as visited
+3. Visit D (B's neighbor), mark as visited
+4. Visit C (D's neighbor), mark as visited
+5. Visit E (C's neighbor), mark as visited
+6. Visit F (E's neighbor), mark as visited
+
+DFS Traversal Order: A → B → D → C → E → F
+`}
+                  />
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Python Implementation (Recursive)</h4>
+                    <CodeBlock 
+                      language="python"
+                      code={`def dfs_recursive(graph, vertex, visited=None):
+    # Initialize visited set on first call
+    if visited is None:
+        visited = set()
+    
+    # Mark the current vertex as visited
+    visited.add(vertex)
+    print(vertex, end=' ')
+    
+    # Recur for all adjacent vertices
+    for neighbor in graph[vertex]:
+        if neighbor not in visited:
+            dfs_recursive(graph, neighbor, visited)
+    
+    return visited
+
+# Example usage
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D'],
+    'C': ['A', 'D', 'E'],
+    'D': ['B', 'C'],
+    'E': ['C', 'F'],
+    'F': ['E']
+}
+
+print("DFS traversal starting from vertex 'A':")
+dfs_recursive(graph, 'A')  # Output: A B D C E F`}
+                    />
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Python Implementation (Iterative)</h4>
+                    <CodeBlock 
+                      language="python"
+                      code={`def dfs_iterative(graph, start):
+    # Create a stack for DFS and a set to track visited vertices
+    stack = [start]
+    visited = set()
+    
+    while stack:
+        # Pop a vertex from the stack
+        vertex = stack.pop()
+        
+        # If not visited, mark it and process it
+        if vertex not in visited:
+            print(vertex, end=' ')
+            visited.add(vertex)
+            
+            # Add all adjacent vertices to the stack
+            # Add in reverse order to get the same traversal as recursive method
+            for neighbor in reversed(graph[vertex]):
+                if neighbor not in visited:
+                    stack.append(neighbor)
+
+# Example usage
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D'],
+    'C': ['A', 'D', 'E'],
+    'D': ['B', 'C'],
+    'E': ['C', 'F'],
+    'F': ['E']
+}
+
+print("DFS traversal starting from vertex 'A':")
+dfs_iterative(graph, 'A')  # Output: A C E F D B`}
+                    />
+                  </div>
+                </TabsContent>
+                
+                {/* Breadth-First Search */}
+                <TabsContent value="breadth-first" className="space-y-4 mt-4">
+                  <div className="flex justify-between items-start">
+                    <div className="space-y-2">
+                      <h3 className="font-medium">Breadth-First Search (BFS)</h3>
+                      <p>A graph traversal algorithm that explores all neighbors at the present depth before moving to vertices at the next depth level, typically implemented using a queue.</p>
+                    </div>
+                    <div className="bg-muted px-3 py-1 rounded text-sm">
+                      <div>Time: <span className="font-medium">O(V + E)</span></div>
+                      <div>Space: <span className="font-medium">O(V)</span></div>
+                      <div>V = vertices, E = edges</div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">How It Works</h4>
+                    <ol className="list-decimal pl-6 space-y-1 text-sm">
+                      <li>Start at the source vertex and mark it as visited</li>
+                      <li>Add the source vertex to a queue</li>
+                      <li>While the queue is not empty, dequeue a vertex</li>
+                      <li>Visit all unvisited neighbors, mark them as visited, and enqueue them</li>
+                      <li>Repeat until the queue is empty</li>
+                    </ol>
+                  </div>
+                  
+                  <DiagramBox 
+                    title="BFS Visualization"
+                    diagram={`
+Graph:
+    A --- B
+   / \\     \\
+  /   \\     \\
+ C --- D --- E
+  \\
+   \\
+    F
+
+BFS starting from A:
+Step 1: Visit A, add to queue
+        Queue: [A]
+Step 2: Dequeue A, visit and enqueue all neighbors (B, C)
+        Queue: [B, C]
+Step 3: Dequeue B, visit and enqueue all unvisited neighbors (E)
+        Queue: [C, E]
+Step 4: Dequeue C, visit and enqueue all unvisited neighbors (D, F)
+        Queue: [E, D, F]
+Step 5: Dequeue E (no unvisited neighbors)
+        Queue: [D, F]
+Step 6: Dequeue D (no unvisited neighbors)
+        Queue: [F]
+Step 7: Dequeue F (no unvisited neighbors)
+        Queue: []
+
+BFS Traversal Order: A → B → C → E → D → F
+`}
+                  />
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Python Implementation</h4>
+                    <CodeBlock 
+                      language="python"
+                      code={`from collections import deque
+
+def bfs(graph, start):
+    # Create a queue for BFS
+    queue = deque([start])
+    
+    # Set to keep track of visited vertices
+    visited = {start}
+    
+    # List to store traversal order
+    traversal = []
+    
+    while queue:
+        # Dequeue a vertex from the queue
+        vertex = queue.popleft()
+        traversal.append(vertex)
+        
+        # Visit all adjacent unvisited vertices
+        for neighbor in graph[vertex]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+    
+    return traversal
+
+# Example usage
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'E'],
+    'C': ['A', 'D', 'F'],
+    'D': ['C', 'E'],
+    'E': ['B', 'D'],
+    'F': ['C']
+}
+
+result = bfs(graph, 'A')
+print("BFS traversal starting from vertex 'A':")
+print(' → '.join(result))  # Output: A → B → C → E → D → F`}
+                    />
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Shortest Path using BFS</h4>
+                    <CodeBlock 
+                      language="python"
+                      code={`from collections import deque
+
+def shortest_path_bfs(graph, start, end):
+    # Handle case when start and end are the same
+    if start == end:
+        return [start]
+    
+    # Queue to store paths
+    queue = deque([[start]])
+    
+    # Set to keep track of visited vertices
+    visited = {start}
+    
+    while queue:
+        # Get the first path from queue
+        path = queue.popleft()
+        
+        # Get the last node in the path
+        vertex = path[-1]
+        
+        # Check all adjacent vertices
+        for neighbor in graph[vertex]:
+            # If neighbor hasn't been visited
+            if neighbor not in visited:
+                # Create a new path by appending the neighbor
+                new_path = list(path)
+                new_path.append(neighbor)
+                
+                # If neighbor is the destination, return the path
+                if neighbor == end:
+                    return new_path
+                
+                # Mark neighbor as visited and enqueue the new path
+                visited.add(neighbor)
+                queue.append(new_path)
+    
+    # If no path exists
+    return None
+
+# Example usage
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'E'],
+    'C': ['A', 'D', 'F'],
+    'D': ['C', 'E'],
+    'E': ['B', 'D'],
+    'F': ['C']
+}
+
+path = shortest_path_bfs(graph, 'A', 'F')
+if path:
+    print(f"Shortest path from A to F: {' → '.join(path)}")  # Output: A → C → F
+else:
+    print("No path exists")`}
+                    />
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Applications of BFS</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-sm">
+                      <li>Finding shortest paths in unweighted graphs</li>
+                      <li>Web crawlers</li>
+                      <li>Social networking (finding friends within a certain distance)</li>
+                      <li>GPS navigation systems</li>
+                      <li>Broadcasting in networks</li>
+                      <li>Garbage collection in programming languages</li>
+                      <li>Finding all nodes within one connected component</li>
+                      <li>Testing bipartiteness of a graph</li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Pros and Cons</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-xs font-medium mb-1">Advantages</h5>
+                        <ul className="list-disc pl-6 space-y-1 text-sm">
+                          <li>Guaranteed to find the shortest path in unweighted graphs</li>
+                          <li>Efficient for graphs where solutions are close to the source</li>
+                          <li>Better than DFS for finding the shortest path</li>
+                          <li>More systematic than DFS for searching a graph</li>
+                          <li>Good for level-by-level traversal</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-xs font-medium mb-1">Disadvantages</h5>
+                        <ul className="list-disc pl-6 space-y-1 text-sm">
+                          <li>Uses more memory than DFS for deep graphs</li>
+                          <li>Not suitable for decision trees or game trees</li>
+                          <li>Inefficient for weighted graphs (Dijkstra's algorithm is better)</li>
+                          <li>Can be slow for very large graphs with many branches</li>
                         </ul>
                       </div>
                     </div>
@@ -1118,6 +1805,8 @@ DFS Traversal Order: A → B → D → C → E → F
     for neighbor in graph[vertex]:
         if neighbor not in visited:
             dfs_recursive(graph, neighbor, visited)
+    
+    return visited
 
 # Example usage
 graph = {
@@ -1172,6 +1861,44 @@ print("DFS traversal starting from vertex 'A':")
 dfs_iterative(graph, 'A')  # Output: A C E F D B`}
                     />
                   </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Applications of DFS</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-sm">
+                      <li>Detecting cycles in graphs</li>
+                      <li>Finding paths between two vertices</li>
+                      <li>Topological sorting</li>
+                      <li>Solving mazes and puzzles</li>
+                      <li>Finding connected components</li>
+                      <li>Finding strongly connected components</li>
+                      <li>Generating minimum spanning trees</li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Pros and Cons</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-xs font-medium mb-1">Advantages</h5>
+                        <ul className="list-disc pl-6 space-y-1 text-sm">
+                          <li>Uses less memory than BFS for wide graphs</li>
+                          <li>Will find a solution if one exists</li>
+                          <li>Good for decision trees and game trees</li>
+                          <li>Simple implementation using recursion</li>
+                          <li>Fast for deep graphs where solutions are far from root</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-xs font-medium mb-1">Disadvantages</h5>
+                        <ul className="list-disc pl-6 space-y-1 text-sm">
+                          <li>May get stuck in very deep/infinite paths</li>
+                          <li>Not guaranteed to find the shortest path</li>
+                          <li>Can be slower than BFS for finding shortest paths</li>
+                          <li>Recursion can lead to stack overflow for very deep graphs</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </TabsContent>
                 
                 {/* BFS */}
@@ -1179,7 +1906,7 @@ dfs_iterative(graph, 'A')  # Output: A C E F D B`}
                   <div className="flex justify-between items-start">
                     <div className="space-y-2">
                       <h3 className="font-medium">Breadth-First Search (BFS)</h3>
-                      <p>An algorithm for traversing tree or graph data structures that explores all neighbors at the present depth before moving to vertices at the next depth level.</p>
+                      <p>A graph traversal algorithm that explores all neighbors at the present depth before moving to vertices at the next depth level, typically implemented using a queue.</p>
                     </div>
                     <div className="bg-muted px-3 py-1 rounded text-sm">
                       <div>Time: <span className="font-medium">O(V + E)</span></div>
@@ -1191,10 +1918,11 @@ dfs_iterative(graph, 'A')  # Output: A C E F D B`}
                   <div>
                     <h4 className="text-sm font-medium mb-2">How It Works</h4>
                     <ol className="list-decimal pl-6 space-y-1 text-sm">
-                      <li>Start at a source vertex and mark it as visited</li>
-                      <li>Visit all the adjacent vertices and mark them as visited</li>
-                      <li>Move to the next level of vertices (the next level of adjacency)</li>
-                      <li>Continue until all vertices are visited</li>
+                      <li>Start at the source vertex and mark it as visited</li>
+                      <li>Add the source vertex to a queue</li>
+                      <li>While the queue is not empty, dequeue a vertex</li>
+                      <li>Visit all unvisited neighbors, mark them as visited, and enqueue them</li>
+                      <li>Repeat until the queue is empty</li>
                     </ol>
                   </div>
                   
@@ -1203,20 +1931,30 @@ dfs_iterative(graph, 'A')  # Output: A C E F D B`}
                     diagram={`
 Graph:
     A --- B
-    |     |
-    |     |
-    C --- D
-    |
-    |
-    E --- F
+   / \\     \\
+  /   \\     \\
+ C --- D --- E
+  \\
+   \\
+    F
 
 BFS starting from A:
-1. Visit A (Level 0)
-2. Visit all neighbors of A: B, C (Level 1)
-3. Visit all neighbors of B and C: D, E (Level 2)
-4. Visit all unvisited neighbors of D and E: F (Level 3)
+Step 1: Visit A, add to queue
+        Queue: [A]
+Step 2: Dequeue A, visit and enqueue all neighbors (B, C)
+        Queue: [B, C]
+Step 3: Dequeue B, visit and enqueue all unvisited neighbors (E)
+        Queue: [C, E]
+Step 4: Dequeue C, visit and enqueue all unvisited neighbors (D, F)
+        Queue: [E, D, F]
+Step 5: Dequeue E (no unvisited neighbors)
+        Queue: [D, F]
+Step 6: Dequeue D (no unvisited neighbors)
+        Queue: [F]
+Step 7: Dequeue F (no unvisited neighbors)
+        Queue: []
 
-BFS Traversal Order: A → B → C → D → E → F
+BFS Traversal Order: A → B → C → E → D → F
 `}
                   />
                   
@@ -1233,82 +1971,136 @@ def bfs(graph, start):
     # Set to keep track of visited vertices
     visited = {start}
     
+    # List to store traversal order
+    traversal = []
+    
     while queue:
         # Dequeue a vertex from the queue
         vertex = queue.popleft()
-        print(vertex, end=' ')
+        traversal.append(vertex)
         
-        # Get all adjacent vertices of the dequeued vertex
-        # If an adjacent vertex has not been visited, mark it
-        # visited and enqueue it
+        # Visit all adjacent unvisited vertices
         for neighbor in graph[vertex]:
             if neighbor not in visited:
                 visited.add(neighbor)
                 queue.append(neighbor)
+    
+    return traversal
 
 # Example usage
 graph = {
     'A': ['B', 'C'],
-    'B': ['A', 'D'],
-    'C': ['A', 'D', 'E'],
-    'D': ['B', 'C'],
-    'E': ['C', 'F'],
-    'F': ['E']
+    'B': ['A', 'E'],
+    'C': ['A', 'D', 'F'],
+    'D': ['C', 'E'],
+    'E': ['B', 'D'],
+    'F': ['C']
 }
 
+result = bfs(graph, 'A')
 print("BFS traversal starting from vertex 'A':")
-bfs(graph, 'A')  # Output: A B C D E F`}
+print(' → '.join(result))  # Output: A → B → C → E → D → F`}
                     />
                   </div>
                   
                   <div>
-                    <h4 className="text-sm font-medium mb-2">Finding Shortest Path</h4>
+                    <h4 className="text-sm font-medium mb-2">Shortest Path using BFS</h4>
                     <CodeBlock 
                       language="python"
                       code={`from collections import deque
 
 def shortest_path_bfs(graph, start, end):
-    # Return immediately if start and end are the same
+    # Handle case when start and end are the same
     if start == end:
         return [start]
     
-    # Queue for BFS
-    queue = deque([(start, [start])])
+    # Queue to store paths
+    queue = deque([[start]])
     
     # Set to keep track of visited vertices
     visited = {start}
     
     while queue:
-        # Dequeue a vertex and its path
-        vertex, path = queue.popleft()
+        # Get the first path from queue
+        path = queue.popleft()
         
-        # Get all adjacent vertices
+        # Get the last node in the path
+        vertex = path[-1]
+        
+        # Check all adjacent vertices
         for neighbor in graph[vertex]:
-            # If neighbor is the end vertex, return path + [neighbor]
-            if neighbor == end:
-                return path + [neighbor]
-            
-            # If neighbor has not been visited, mark it visited and enqueue it
+            # If neighbor hasn't been visited
             if neighbor not in visited:
+                # Create a new path by appending the neighbor
+                new_path = list(path)
+                new_path.append(neighbor)
+                
+                # If neighbor is the destination, return the path
+                if neighbor == end:
+                    return new_path
+                
+                # Mark neighbor as visited and enqueue the new path
                 visited.add(neighbor)
-                queue.append((neighbor, path + [neighbor]))
+                queue.append(new_path)
     
-    # No path found
+    # If no path exists
     return None
 
 # Example usage
 graph = {
     'A': ['B', 'C'],
-    'B': ['A', 'D'],
-    'C': ['A', 'D', 'E'],
-    'D': ['B', 'C'],
-    'E': ['C', 'F'],
-    'F': ['E']
+    'B': ['A', 'E'],
+    'C': ['A', 'D', 'F'],
+    'D': ['C', 'E'],
+    'E': ['B', 'D'],
+    'F': ['C']
 }
 
 path = shortest_path_bfs(graph, 'A', 'F')
-print(f"Shortest path from A to F: {' → '.join(path)}")  # Output: A → C → E → F`}
+if path:
+    print(f"Shortest path from A to F: {' → '.join(path)}")  # Output: A → C → F
+else:
+    print("No path exists")`}
                     />
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Applications of BFS</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-sm">
+                      <li>Finding shortest paths in unweighted graphs</li>
+                      <li>Web crawlers</li>
+                      <li>Social networking (finding friends within a certain distance)</li>
+                      <li>GPS navigation systems</li>
+                      <li>Broadcasting in networks</li>
+                      <li>Garbage collection in programming languages</li>
+                      <li>Finding all nodes within one connected component</li>
+                      <li>Testing bipartiteness of a graph</li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Pros and Cons</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-xs font-medium mb-1">Advantages</h5>
+                        <ul className="list-disc pl-6 space-y-1 text-sm">
+                          <li>Guaranteed to find the shortest path in unweighted graphs</li>
+                          <li>Efficient for graphs where solutions are close to the source</li>
+                          <li>Better than DFS for finding the shortest path</li>
+                          <li>More systematic than DFS for searching a graph</li>
+                          <li>Good for level-by-level traversal</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-xs font-medium mb-1">Disadvantages</h5>
+                        <ul className="list-disc pl-6 space-y-1 text-sm">
+                          <li>Uses more memory than DFS for deep graphs</li>
+                          <li>Not suitable for decision trees or game trees</li>
+                          <li>Inefficient for weighted graphs (Dijkstra's algorithm is better)</li>
+                          <li>Can be slow for very large graphs with many branches</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </TabsContent>
                 
@@ -1384,8 +2176,6 @@ print(f"Shortest path from A to F: {' → '.join(path)}")  # Output: A → C →
             </CardContent>
           </Card>
         </TabsContent>
-        
-        {/* Other algorithm sections would go here */}
       </Tabs>
     </div>
   )

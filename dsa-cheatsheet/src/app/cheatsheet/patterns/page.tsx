@@ -384,7 +384,443 @@ print(f"Array after removing duplicates: {arr[:length]}")  # Output: [1, 2, 3, 4
           </Card>
         </TabsContent>
         
-        {/* Other pattern sections would go here */}
+        {/* Fast & Slow Pointers Pattern */}
+        <TabsContent value="fast-slow" className="mt-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Fast & Slow Pointers Pattern</CardTitle>
+              <CardDescription>
+                A technique using two pointers moving at different speeds to detect cycles or find middle elements in linear data structures
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-medium mb-2">What Is It?</h3>
+                  <p>
+                    The Fast & Slow Pointers pattern (also known as Hare & Tortoise algorithm) uses two pointers that move through the array 
+                    or linked list at different speeds. The fast pointer moves twice as fast as the slow pointer, which helps detect cycles 
+                    or find the middle of a linked list in one pass.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="font-medium mb-2">When To Use It</h3>
+                  <ul className="list-disc pl-6 space-y-1">
+                    <li>Detecting cycles in a linked list or array</li>
+                    <li>Finding the middle element of a linked list</li>
+                    <li>Finding if a linked list is a palindrome</li>
+                    <li>Identifying the start of a cycle in a linked list</li>
+                    <li>Problems involving cyclic detection in sequences</li>
+                  </ul>
+                </div>
+                
+                <DiagramBox 
+                  title="Fast & Slow Pointers Visualization: Cycle Detection"
+                  diagram={`
+Linked List: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 3 (cycles back)
+
+Initialize two pointers:
+Slow moves one step at a time
+Fast moves two steps at a time
+
+Start:
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 
+S    F
+
+Step 1:
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 
+     S         F
+
+Step 2:
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 
+          S              F
+
+Step 3:
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 
+               S    ↑    |
+               ↑    |    |
+               |    |    |
+               ← ← ← ← ← ↓
+                    F
+
+Step 4:
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 
+                    S    |
+                    |    |
+          F         |    |
+          ↑         |    |
+          ← ← ← ← ← ← ← ↓
+
+Step 5: Fast and Slow meet at node 3
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 
+     F,S
+     
+Cycle detected!
+`}
+                />
+                
+                <div>
+                  <h3 className="font-medium mb-2">Variations</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <h4 className="text-sm font-semibold">Cycle Detection</h4>
+                      <p className="text-sm">Used to determine if a linked list or sequence has a cycle or loop.</p>
+                      <div className="mt-1 text-sm text-muted-foreground">Example problems: LinkedList Cycle, Circular Array Loop</div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-semibold">Middle Element Finding</h4>
+                      <p className="text-sm">Used to find the middle element of a linked list in one pass.</p>
+                      <div className="mt-1 text-sm text-muted-foreground">Example problems: Middle of the LinkedList, Palindrome LinkedList</div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-semibold">Cycle Start Finding</h4>
+                      <p className="text-sm">Used to find the node where the cycle begins in a linked list.</p>
+                      <div className="mt-1 text-sm text-muted-foreground">Example problems: LinkedList Cycle II, Find the Duplicate Number</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="font-medium mb-2">Implementation Example: Detect Cycle in a Linked List</h3>
+                  <CodeBlock 
+                    language="python"
+                    code={`class ListNode:
+    def __init__(self, value=0, next=None):
+        self.value = value
+        self.next = next
+
+def has_cycle(head):
+    """
+    Determine if a linked list has a cycle.
+    
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+    """
+    # Edge case: empty list or single node
+    if not head or not head.next:
+        return False
+        
+    # Initialize slow and fast pointers
+    slow = head
+    fast = head
+    
+    # Move slow by one step and fast by two steps
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        
+        # If slow and fast meet, there's a cycle
+        if slow == fast:
+            return True
+            
+    # If fast reaches the end, there's no cycle
+    return False
+
+# Example usage
+# Create a linked list with a cycle: 1->2->3->4->5->3(cycles back)
+head = ListNode(1)
+head.next = ListNode(2)
+head.next.next = ListNode(3)
+head.next.next.next = ListNode(4)
+head.next.next.next.next = ListNode(5)
+head.next.next.next.next.next = head.next.next  # Create cycle by pointing to node 3
+
+result = has_cycle(head)
+print(f"Linked list has cycle: {result}")  # Output: True`}
+                  />
+                </div>
+                
+                <div>
+                  <h3 className="font-medium mb-2">Implementation Example: Find Middle of a Linked List</h3>
+                  <CodeBlock 
+                    language="python"
+                    code={`class ListNode:
+    def __init__(self, value=0, next=None):
+        self.value = value
+        self.next = next
+
+def find_middle(head):
+    """
+    Find the middle node of a linked list.
+    If the list has even number of nodes, return the second middle node.
+    
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+    """
+    # Edge case: empty list or single node
+    if not head or not head.next:
+        return head
+        
+    # Initialize slow and fast pointers
+    slow = head
+    fast = head
+    
+    # Move slow by one step and fast by two steps
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        
+    # When fast reaches the end, slow is at the middle
+    return slow
+
+# Example usage
+# Create a linked list: 1->2->3->4->5
+head = ListNode(1)
+head.next = ListNode(2)
+head.next.next = ListNode(3)
+head.next.next.next = ListNode(4)
+head.next.next.next.next = ListNode(5)
+
+middle = find_middle(head)
+print(f"Middle node value: {middle.value}")  # Output: 3`}
+                  />
+                </div>
+                
+                <div>
+                  <h3 className="font-medium mb-2">Common Problems</h3>
+                  <ul className="list-disc pl-6 space-y-1">
+                    <li>Linked List Cycle</li>
+                    <li>Linked List Cycle II (find cycle start)</li>
+                    <li>Happy Number</li>
+                    <li>Middle of the Linked List</li>
+                    <li>Palindrome Linked List</li>
+                    <li>Find the Duplicate Number</li>
+                    <li>Circular Array Loop</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+        
+        {/* BFS/DFS Patterns */}
+        <TabsContent value="bfs-dfs" className="mt-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>BFS/DFS Patterns</CardTitle>
+              <CardDescription>
+                Fundamental traversal techniques for exploring trees, graphs, and other complex data structures
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-medium mb-2">What Is It?</h3>
+                  <p>
+                    Breadth-First Search (BFS) and Depth-First Search (DFS) are two fundamental graph traversal algorithms. 
+                    BFS explores all neighbors at the current depth before moving to nodes at the next depth level, 
+                    while DFS explores as far as possible along each branch before backtracking.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="font-medium mb-2">When To Use It</h3>
+                  <ul className="list-disc pl-6 space-y-1">
+                    <li>Traversing trees, graphs, or matrix-based problems</li>
+                    <li>Finding shortest paths (BFS) or exploring all possibilities (DFS)</li>
+                    <li>Solving puzzles or games with state transitions</li>
+                    <li>Detecting cycles in graphs</li>
+                    <li>Topological sorting (DFS)</li>
+                    <li>Connected components or islands problems</li>
+                  </ul>
+                </div>
+                
+                <DiagramBox 
+                  title="BFS vs DFS Visualization"
+                  diagram={`
+Tree Structure:
+       1
+     /   \\
+    2     3
+   / \\   / \\
+  4   5 6   7
+
+BFS Traversal Order:
+Level 0: 1
+Level 1: 2, 3
+Level 2: 4, 5, 6, 7
+Visits: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
+
+DFS Traversal Order (Preorder):
+Visits left subtree completely before right subtree
+Visits: 1 -> 2 -> 4 -> 5 -> 3 -> 6 -> 7
+`}
+                />
+                
+                <div>
+                  <h3 className="font-medium mb-2">Variations</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <h4 className="text-sm font-semibold">Breadth-First Search (BFS)</h4>
+                      <p className="text-sm">Explores all neighbors at the current depth before moving to nodes at the next depth level.</p>
+                      <div className="mt-1 text-sm text-muted-foreground">Example problems: Shortest Path, Level Order Traversal, Word Ladder</div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-semibold">Depth-First Search (DFS)</h4>
+                      <p className="text-sm">Explores as far as possible along each branch before backtracking.</p>
+                      <div className="mt-1 text-sm text-muted-foreground">Example problems: Path Finding, Cycle Detection, Topological Sort, Island Problems</div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-semibold">Bidirectional BFS</h4>
+                      <p className="text-sm">Runs two BFS searches simultaneously from start and goal to find the shortest path more efficiently.</p>
+                      <div className="mt-1 text-sm text-muted-foreground">Example problems: Word Ladder, Shortest Path in Undirected Graph</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="font-medium mb-2">Implementation Example: BFS for Level Order Traversal</h3>
+                  <CodeBlock 
+                    language="python"
+                    code={`from collections import deque
+
+class TreeNode:
+    def __init__(self, value=0, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+def level_order_traversal(root):
+    """
+    Perform level order traversal on a binary tree using BFS.
+    
+    Time Complexity: O(n) where n is the number of nodes
+    Space Complexity: O(n)
+    """
+    # Edge case: empty tree
+    if not root:
+        return []
+        
+    result = []
+    queue = deque([root])
+    
+    while queue:
+        # Get the number of nodes at current level
+        level_size = len(queue)
+        level_nodes = []
+        
+        # Process all nodes at current level
+        for _ in range(level_size):
+            node = queue.popleft()
+            level_nodes.append(node.value)
+            
+            # Add children to the queue for next level processing
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+                
+        # Add current level's nodes to result
+        result.append(level_nodes)
+        
+    return result
+
+# Example usage
+# Create a binary tree:
+#        1
+#       / \\
+#      2   3
+#     / \\ / \\
+#    4  5 6  7
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+root.right.left = TreeNode(6)
+root.right.right = TreeNode(7)
+
+result = level_order_traversal(root)
+print("Level order traversal:")
+for i, level in enumerate(result):
+    print(f"Level {i}: {level}")
+
+# Output:
+# Level 0: [1]
+# Level 1: [2, 3]
+# Level 2: [4, 5, 6, 7]`}
+                  />
+                </div>
+                
+                <div>
+                  <h3 className="font-medium mb-2">Implementation Example: DFS for Island Count</h3>
+                  <CodeBlock 
+                    language="python"
+                    code={`def count_islands(grid):
+    """
+    Count the number of islands in a 2D grid using DFS.
+    An island is formed by connecting adjacent lands horizontally or vertically.
+    
+    Time Complexity: O(m*n) where m is number of rows, n is number of columns
+    Space Complexity: O(m*n) in worst case due to recursion stack
+    """
+    if not grid or not grid[0]:
+        return 0
+        
+    rows, cols = len(grid), len(grid[0])
+    count = 0
+    
+    def dfs(r, c):
+        # Base case: out of bounds or water or visited (marked as '0')
+        if (r < 0 or r >= rows or c < 0 or c >= cols or grid[r][c] == '0'):
+            return
+            
+        # Mark current cell as visited
+        grid[r][c] = '0'
+        
+        # Explore all 4 directions
+        dfs(r + 1, c)  # down
+        dfs(r - 1, c)  # up
+        dfs(r, c + 1)  # right
+        dfs(r, c - 1)  # left
+    
+    # Iterate through each cell in the grid
+    for r in range(rows):
+        for c in range(cols):
+            if grid[r][c] == '1':
+                # Found an unvisited land, start DFS and count as a new island
+                count += 1
+                dfs(r, c)
+                
+    return count
+
+# Example usage
+grid = [
+    ['1', '1', '0', '0', '0'],
+    ['1', '1', '0', '0', '0'],
+    ['0', '0', '1', '0', '0'],
+    ['0', '0', '0', '1', '1']
+]
+
+result = count_islands(grid)
+print(f"Number of islands: {result}")  # Output: 3`}
+                  />
+                </div>
+                
+                <div>
+                  <h3 className="font-medium mb-2">Common Problems</h3>
+                  <ul className="list-disc pl-6 space-y-1">
+                    <li>Binary Tree Level Order Traversal</li>
+                    <li>Number of Islands</li>
+                    <li>Word Ladder</li>
+                    <li>Course Schedule (Topological Sort)</li>
+                    <li>Clone Graph</li>
+                    <li>Walls and Gates</li>
+                    <li>Pacific Atlantic Water Flow</li>
+                    <li>Word Search</li>
+                    <li>Flood Fill</li>
+                    <li>Minimum Depth of Binary Tree</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
       </Tabs>
     </div>
   )

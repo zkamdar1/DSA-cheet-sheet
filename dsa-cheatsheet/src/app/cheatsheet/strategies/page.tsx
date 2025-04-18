@@ -36,7 +36,7 @@ export default function StrategiesPage() {
             <CardContent className="space-y-6">
               <div>
                 <h3 className="font-medium mb-3">Step 1: Understand the Problem</h3>
-                <div className="ml-4 space-y-3">
+                <div className="bg-muted p-4 rounded-md ml-4 space-y-3">
                   <div>
                     <h4 className="text-sm font-medium">Ask Clarifying Questions</h4>
                     <ul className="list-disc pl-6 space-y-1 text-sm">
@@ -68,7 +68,7 @@ export default function StrategiesPage() {
               
               <div>
                 <h3 className="font-medium mb-3">Step 2: Devise a Plan</h3>
-                <div className="ml-4 space-y-3">
+                <div className="bg-muted p-4 rounded-md ml-4 space-y-3">
                   <div>
                     <h4 className="text-sm font-medium">Consider Multiple Approaches</h4>
                     <ul className="list-disc pl-6 space-y-1 text-sm">
@@ -100,7 +100,7 @@ export default function StrategiesPage() {
               
               <div>
                 <h3 className="font-medium mb-3">Step 3: Implement the Solution</h3>
-                <div className="ml-4 space-y-3">
+                <div className="bg-muted p-4 rounded-md ml-4 space-y-3">
                   <div>
                     <h4 className="text-sm font-medium">Write Clean, Modular Code</h4>
                     <ul className="list-disc pl-6 space-y-1 text-sm">
@@ -135,7 +135,7 @@ export default function StrategiesPage() {
               
               <div>
                 <h3 className="font-medium mb-3">Step 4: Test Your Solution</h3>
-                <div className="ml-4 space-y-3">
+                <div className="bg-muted p-4 rounded-md ml-4 space-y-3">
                   <div>
                     <h4 className="text-sm font-medium">Test with Various Inputs</h4>
                     <ul className="list-disc pl-6 space-y-1 text-sm">
@@ -168,7 +168,7 @@ export default function StrategiesPage() {
               
               <div>
                 <h3 className="font-medium mb-3">Step 5: Optimize Further</h3>
-                <div className="ml-4 space-y-3">
+                <div className="bg-muted p-4 rounded-md ml-4 space-y-3">
                   <div>
                     <h4 className="text-sm font-medium">Refine Your Solution</h4>
                     <ul className="list-disc pl-6 space-y-1 text-sm">
@@ -213,7 +213,7 @@ export default function StrategiesPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-3">
                   <h3 className="font-medium">Array and String Problems</h3>
-                  <div className="space-y-2">
+                  <div className="bg-muted p-4 rounded-md space-y-2">
                     <div>
                       <h4 className="text-sm font-medium">Search and Sort</h4>
                       <p className="text-sm">Problems involving finding elements or arranging them in order.</p>
@@ -237,7 +237,7 @@ export default function StrategiesPage() {
                 
                 <div className="space-y-3">
                   <h3 className="font-medium">Graph and Tree Problems</h3>
-                  <div className="space-y-2">
+                  <div className="bg-muted p-4 rounded-md space-y-2">
                     <div>
                       <h4 className="text-sm font-medium">Tree Traversal</h4>
                       <p className="text-sm">Problems involving visiting all nodes in a tree.</p>
@@ -261,7 +261,7 @@ export default function StrategiesPage() {
                 
                 <div className="space-y-3">
                   <h3 className="font-medium">Dynamic Programming Problems</h3>
-                  <div className="space-y-2">
+                  <div className="bg-muted p-4 rounded-md space-y-2">
                     <div>
                       <h4 className="text-sm font-medium">Optimization Problems</h4>
                       <p className="text-sm">Problems involving finding the maximum/minimum value.</p>
@@ -285,7 +285,7 @@ export default function StrategiesPage() {
                 
                 <div className="space-y-3">
                   <h3 className="font-medium">Miscellaneous Problems</h3>
-                  <div className="space-y-2">
+                  <div className="bg-muted p-4 rounded-md space-y-2">
                     <div>
                       <h4 className="text-sm font-medium">Divide and Conquer</h4>
                       <p className="text-sm">Problems that can be broken down into smaller, similar subproblems.</p>
@@ -328,7 +328,371 @@ export default function StrategiesPage() {
           </Card>
         </TabsContent>
         
-        {/* Other strategy sections would go here */}
+        {/* Optimization Techniques */}
+        <TabsContent value="optimization" className="mt-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Optimization Techniques</CardTitle>
+              <CardDescription>
+                Strategies to improve the efficiency of your algorithmic solutions
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-muted p-4 rounded-md space-y-3">
+                  <h3 className="font-medium">Time Complexity Optimization</h3>
+                  <div className="space-y-2">
+                    <div>
+                      <h4 className="text-sm font-medium">Caching and Memoization</h4>
+                      <p className="text-sm">Store results of expensive function calls to avoid redundant calculations.</p>
+                      <p className="text-xs text-muted-foreground mt-1">Examples: Fibonacci numbers, recursive function calls</p>
+                      <p className="text-xs mt-1">Implementation: Use a hash map to store function results keyed by their inputs.</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium">Pre-computation and Lookup Tables</h4>
+                      <p className="text-sm">Compute values ahead of time and use lookup to avoid expensive calculations.</p>
+                      <p className="text-xs text-muted-foreground mt-1">Examples: Prefix sums, cumulative products, precomputed factorials</p>
+                      <p className="text-xs mt-1">Implementation: Initialize arrays or tables with precomputed values before main algorithm execution.</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium">Early Termination</h4>
+                      <p className="text-sm">Stop processing as soon as the answer is found or when further processing is unnecessary.</p>
+                      <p className="text-xs text-muted-foreground mt-1">Examples: Binary search, string matching, constraint satisfaction</p>
+                      <p className="text-xs mt-1">Implementation: Add conditional checks that exit loops or recursion when conditions are met.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-muted p-4 rounded-md space-y-3">
+                  <h3 className="font-medium">Space Complexity Optimization</h3>
+                  <div className="space-y-2">
+                    <div>
+                      <h4 className="text-sm font-medium">In-place Algorithms</h4>
+                      <p className="text-sm">Modify input data structures directly instead of creating new ones.</p>
+                      <p className="text-xs text-muted-foreground mt-1">Examples: In-place sort, array manipulation, matrix rotation</p>
+                      <p className="text-xs mt-1">Implementation: Use temporary variables, swapping, or pointer manipulation to avoid allocating extra memory.</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium">Space-Efficient Data Structures</h4>
+                      <p className="text-sm">Choose data structures that minimize memory overhead for the specific use case.</p>
+                      <p className="text-xs text-muted-foreground mt-1">Examples: Bit manipulation, sparse matrices, compressed structures</p>
+                      <p className="text-xs mt-1">Implementation: Use primitive arrays instead of objects when possible, bit vectors for boolean flags.</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium">Rolling/Sliding Window Variables</h4>
+                      <p className="text-sm">Keep track of only the most recent data needed rather than entire history.</p>
+                      <p className="text-xs text-muted-foreground mt-1">Examples: Moving average, sliding window problems</p>
+                      <p className="text-xs mt-1">Implementation: Update variables in-place as you process new elements, discarding old data.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-muted p-4 rounded-md space-y-3">
+                  <h3 className="font-medium">Data Structure Optimizations</h3>
+                  <div className="space-y-2">
+                    <div>
+                      <h4 className="text-sm font-medium">Hash Tables for O(1) Lookup</h4>
+                      <p className="text-sm">Use hash-based data structures to achieve constant-time operations.</p>
+                      <p className="text-xs text-muted-foreground mt-1">Examples: Two Sum, frequency counting, duplicate detection</p>
+                      <p className="text-xs mt-1">Implementation: Map values to indices, count occurrences, or track presence for quick lookups.</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium">Specialized Data Structures</h4>
+                      <p className="text-sm">Choose the right data structure for specific operation patterns.</p>
+                      <p className="text-xs text-muted-foreground mt-1">Examples: Heap for priority access, Trie for prefix matching, Union-Find for disjoint sets</p>
+                      <p className="text-xs mt-1">Implementation: Identify the core operations needed and select data structures optimized for those operations.</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium">Balanced Trees</h4>
+                      <p className="text-sm">Use tree structures that maintain balance to ensure logarithmic operations.</p>
+                      <p className="text-xs text-muted-foreground mt-1">Examples: Sorted data access, range queries, interval problems</p>
+                      <p className="text-xs mt-1">Implementation: Use AVL trees, Red-Black trees, or built-in balanced tree structures from standard libraries.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-muted p-4 rounded-md space-y-3">
+                  <h3 className="font-medium">Algorithm Design Optimizations</h3>
+                  <div className="space-y-2">
+                    <div>
+                      <h4 className="text-sm font-medium">Amortized Analysis</h4>
+                      <p className="text-sm">Distribute the cost of expensive operations over multiple operations.</p>
+                      <p className="text-xs text-muted-foreground mt-1">Examples: Dynamic arrays, two-stack queues, splay trees</p>
+                      <p className="text-xs mt-1">Implementation: Design algorithms where occasional expensive operations are balanced by many cheap ones.</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium">Lazy Evaluation</h4>
+                      <p className="text-sm">Delay computation until results are actually needed.</p>
+                      <p className="text-xs text-muted-foreground mt-1">Examples: Range updates, tree traversals</p>
+                      <p className="text-xs mt-1">Implementation: Store operations to be performed later, and only perform them when their results are needed.</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium">Problem Transformation</h4>
+                      <p className="text-sm">Reformulate the problem into an equivalent, more tractable form.</p>
+                      <p className="text-xs text-muted-foreground mt-1">Examples: Graph problems as matrix operations, geometric problems via coordinate transformations</p>
+                      <p className="text-xs mt-1">Implementation: Identify equivalent representations that allow more efficient solutions.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-muted p-4 rounded-md mt-4">
+                <h3 className="font-medium mb-2">Optimization Decision Framework</h3>
+                <p className="text-sm mb-2">
+                  Follow these steps when optimizing your solution:
+                </p>
+                <ol className="list-decimal pl-6 space-y-1 text-sm">
+                  <li><strong>Identify the bottleneck:</strong> Use time and space complexity analysis to identify the most expensive part of your algorithm.</li>
+                  <li><strong>Consider trade-offs:</strong> Understand the relationship between time and space complexity; often you can trade one for the other.</li>
+                  <li><strong>Choose the right data structure:</strong> Select data structures that optimize for your most frequent operations.</li>
+                  <li><strong>Leverage problem properties:</strong> Use specific characteristics of the problem (sortedness, constraints, patterns) to optimize.</li>
+                  <li><strong>Measure impact:</strong> Ensure your optimization actually improves performance for relevant input sizes and patterns.</li>
+                </ol>
+                <p className="text-sm mt-3 italic">
+                  Remember: Premature optimization is the root of all evil. Start with a correct solution, then optimize based on actual performance needs.
+                </p>
+              </div>
+              
+              <div className="border-t pt-4">
+                <h3 className="font-medium mb-3">Case Study: Array Sum Range Queries</h3>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="text-sm font-medium">Problem</h4>
+                    <p className="text-sm">
+                      Given an array of integers and multiple queries asking for the sum of elements in a range [start, end], 
+                      design an efficient solution.
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-1">
+                    <h4 className="text-sm font-medium">Approach 1: Brute Force (No Optimization)</h4>
+                    <p className="text-sm">For each query, sum the elements in the range by iterating through them.</p>
+                    <p className="text-xs text-muted-foreground">Time Complexity: O(n) per query, where n is the range size</p>
+                  </div>
+                  
+                  <div className="space-y-1">
+                    <h4 className="text-sm font-medium">Approach 2: Prefix Sum (Precomputation)</h4>
+                    <p className="text-sm">Precompute prefix sums, then calculate range sum as prefix[end] - prefix[start-1].</p>
+                    <p className="text-xs text-muted-foreground">Time Complexity: O(n) precomputation, O(1) per query</p>
+                    <p className="text-xs">This optimization trades preprocessing time for faster query responses, ideal for multiple queries.</p>
+                  </div>
+                  
+                  <div className="space-y-1">
+                    <h4 className="text-sm font-medium">Approach 3: Segment Tree (Advanced)</h4>
+                    <p className="text-sm">Build a segment tree for handling range queries and potential updates efficiently.</p>
+                    <p className="text-xs text-muted-foreground">Time Complexity: O(n) for building, O(log n) per query or update</p>
+                    <p className="text-xs">This more complex data structure is optimal when the array values can change between queries.</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+        
+        {/* Common Pitfalls */}
+        <TabsContent value="pitfalls" className="mt-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Common Pitfalls</CardTitle>
+              <CardDescription>
+                Frequent mistakes to avoid when solving algorithm and data structure problems
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h3 className="font-medium mb-3">Implementation Errors</h3>
+                <div className="ml-4 space-y-3">
+                  <div>
+                    <h4 className="text-sm font-medium">Off-by-One Errors</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-sm">
+                      <li>Incorrect loop termination conditions (using &lt; instead of &lt;=)</li>
+                      <li>Miscalculating array indices or boundaries</li>
+                      <li>Improperly handling zero-indexing vs. one-indexing</li>
+                    </ul>
+                    <div className="mt-2 bg-muted p-3 rounded-md">
+                      <p className="text-sm italic">
+                        <span className="font-medium">Example:</span> When iterating through an array of length n, 
+                        using <code>for (i = 1; i &lt; = n; i++)</code> instead of <code>for (i = 0; i &lt; n; i++)</code>
+                        would miss the first element and potentially access out-of-bounds memory.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium">Integer Overflow/Underflow</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-sm">
+                      <li>Not accounting for the range limitations of numeric types</li>
+                      <li>Performing calculations that exceed the maximum value of the data type</li>
+                      <li>Using inappropriate data types for large numbers</li>
+                    </ul>
+                    <div className="mt-2 bg-muted p-3 rounded-md">
+                      <p className="text-sm italic">
+                        <span className="font-medium">Example:</span> In a problem involving factorial calculations,
+                        using a standard 32-bit integer will overflow at 13! (6,227,020,800), producing incorrect results.
+                        Use long integers or BigInteger types for such cases.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium">Uninitialized Variables</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-sm">
+                      <li>Using variables before setting an initial value</li>
+                      <li>Forgetting to initialize counters, arrays, or data structures</li>
+                      <li>Resetting variables inside loops when they should persist</li>
+                    </ul>
+                    <div className="mt-2 bg-muted p-3 rounded-md">
+                      <p className="text-sm italic">
+                        <span className="font-medium">Example:</span> In a maximum subarray sum problem, 
+                        forgetting to initialize <code>maxSum = Integer.MIN_VALUE</code> or <code>maxSum = arr[0]</code> 
+                        before the loop might lead to incorrect results, especially with all-negative arrays.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="font-medium mb-3">Algorithm Design Mistakes</h3>
+                <div className="ml-4 space-y-3">
+                  <div>
+                    <h4 className="text-sm font-medium">Greedy Approach When DP Is Needed</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-sm">
+                      <li>Assuming a locally optimal choice will lead to a globally optimal solution</li>
+                      <li>Not recognizing the need for dynamic programming</li>
+                      <li>Failing to identify overlapping subproblems</li>
+                    </ul>
+                    <div className="mt-2 bg-muted p-3 rounded-md">
+                      <p className="text-sm italic">
+                        <span className="font-medium">Example:</span> In the "Coin Change" problem, a greedy approach 
+                        (always pick the largest denomination) works for some coin systems (like US currency) but fails for others. 
+                        A dynamic programming approach is required for the general case.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium">Ignoring Edge Cases</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-sm">
+                      <li>Not handling empty inputs or boundary conditions</li>
+                      <li>Overlooking special cases (e.g., all negative numbers, duplicates)</li>
+                      <li>Assuming inputs will always be well-formed or within constraints</li>
+                    </ul>
+                    <div className="mt-2 bg-muted p-3 rounded-md">
+                      <p className="text-sm italic">
+                        <span className="font-medium">Example:</span> In a binary search implementation, not properly 
+                        handling empty arrays or single-element arrays can lead to infinite loops or incorrect results.
+                        Always test your solution with: empty input, single element, two elements, and standard cases.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium">Inefficient Data Structure Choice</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-sm">
+                      <li>Using arrays when hash tables would be more efficient</li>
+                      <li>Using nested loops when a more efficient data structure exists</li>
+                      <li>Not leveraging specialized data structures for specific operations</li>
+                    </ul>
+                    <div className="mt-2 bg-muted p-3 rounded-md">
+                      <p className="text-sm italic">
+                        <span className="font-medium">Example:</span> In a "Find Duplicate" problem, using nested loops 
+                        (O(n²)) instead of a hash set (O(n)) significantly impacts performance. Similarly, using an array 
+                        to track frequency when a hash map would allow O(1) lookups.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="font-medium mb-3">Testing and Debugging Pitfalls</h3>
+                <div className="ml-4 space-y-3">
+                  <div>
+                    <h4 className="text-sm font-medium">Insufficient Test Cases</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-sm">
+                      <li>Only testing with the examples provided in the problem</li>
+                      <li>Not creating custom test cases for edge conditions</li>
+                      <li>Failing to test with large inputs or stress tests</li>
+                    </ul>
+                    <div className="mt-2 bg-muted p-3 rounded-md">
+                      <p className="text-sm italic">
+                        <span className="font-medium">Example:</span> In a "Palindrome Checker" function, only testing with
+                        simple examples like "racecar" but missing edge cases like empty strings, single characters,
+                        strings with spaces or punctuation, or very long strings.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium">Ineffective Debugging</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-sm">
+                      <li>Making multiple changes at once, making it hard to isolate issues</li>
+                      <li>Not using systematic debugging approaches (e.g., binary search debugging)</li>
+                      <li>Adding print statements without clear purpose or structure</li>
+                    </ul>
+                    <div className="mt-2 bg-muted p-3 rounded-md">
+                      <p className="text-sm italic">
+                        <span className="font-medium">Example:</span> When debugging a sorting algorithm, changing both the
+                        comparison logic and the swap mechanism simultaneously makes it difficult to determine which change fixed
+                        or caused an issue. Make one change at a time and test after each modification.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-muted p-4 rounded-md mt-4">
+                <h3 className="font-medium mb-2">Debugging Checklist</h3>
+                <p className="text-sm mb-2">
+                  When your solution isn't working as expected, systematically check these common issues:
+                </p>
+                <ol className="list-decimal pl-6 space-y-1 text-sm">
+                  <li><strong>Array bounds:</strong> Are your loop indices correct? Are you accessing valid array positions?</li>
+                  <li><strong>Edge cases:</strong> Have you tested with empty inputs, single elements, or other boundary conditions?</li>
+                  <li><strong>Variable initialization:</strong> Are all variables properly initialized before use?</li>
+                  <li><strong>Off-by-one errors:</strong> Are your loop conditions correct? Should you use &lt; or &lt;=?</li>
+                  <li><strong>Logic validation:</strong> Does your algorithm handle all possible input scenarios correctly?</li>
+                  <li><strong>Time complexity:</strong> Is your solution efficient enough for the constraints given?</li>
+                  <li><strong>Overflow/underflow:</strong> Could your calculations exceed the range of your data types?</li>
+                  <li><strong>Comparison operators:</strong> Are you using the correct operators (==, !=, &lt;, &gt;)?</li>
+                </ol>
+              </div>
+              
+              <div className="border-t pt-4">
+                <h3 className="font-medium mb-3">Common Misconceptions</h3>
+                <div className="space-y-3">
+                  <div className="flex">
+                    <div className="mr-3 text-lg font-semibold text-red-500">✗</div>
+                    <div>
+                      <p className="text-sm font-medium">"The first working solution is good enough"</p>
+                      <p className="text-sm">It's tempting to stop once you have a working solution, but your first approach is rarely optimal.</p>
+                      <p className="text-xs mt-1 text-muted-foreground">Always consider if there are more efficient approaches, especially in terms of time and space complexity.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex">
+                    <div className="mr-3 text-lg font-semibold text-red-500">✗</div>
+                    <div>
+                      <p className="text-sm font-medium">"More complex algorithms are always better"</p>
+                      <p className="text-sm">Complex algorithms are not inherently better than simpler ones with the same complexity.</p>
+                      <p className="text-xs mt-1 text-muted-foreground">Prioritize code clarity and correctness. Only add complexity when it provides tangible benefits.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex">
+                    <div className="mr-3 text-lg font-semibold text-red-500">✗</div>
+                    <div>
+                      <p className="text-sm font-medium">"I can optimize later"</p>
+                      <p className="text-sm">While premature optimization should be avoided, ignoring efficiency entirely can lead to solutions that fail with larger inputs.</p>
+                      <p className="text-xs mt-1 text-muted-foreground">Consider the time and space complexity of your approach from the beginning, especially for the expected input size.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
       </Tabs>
     </div>
   )

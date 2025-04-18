@@ -112,7 +112,7 @@ export function SearchCommand({ categories, ...props }: CommandMenuProps) {
     <>
       <Button
         variant="outline"
-        className="relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64"
+        className="relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-full"
         onClick={toggleOpen}
         {...props}
       >

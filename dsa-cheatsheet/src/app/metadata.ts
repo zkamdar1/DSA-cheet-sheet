@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 const siteConfig = {
   name: 'DSA Cheatsheet',
   description: 'A comprehensive cheatsheet for data structures and algorithms',
-  url: 'https://dsa-cheetsheet.vercel.app', // Updated with actual deployed URL
+  url: 'https://dsacheatsheet.vercel.app',
   ogImage: '/og-image.png',
 };
 
@@ -25,18 +25,18 @@ export const defaultMetadata: Metadata = {
   ],
   authors: [
     {
-      name: 'Your Name', // Replace with your name
-      url: 'https://github.com/yourusername', // Replace with your GitHub or personal site
+      name: 'Zaid Kamdar', 
+      url: 'https://github.com/zkamdar1',
     },
   ],
-  creator: 'Your Name', // Replace with your name
+  creator: 'Zaid Kamdar',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: siteConfig.url,
-    title: siteConfig.name,
-    description: siteConfig.description,
-    siteName: siteConfig.name,
+    title: 'DSA Cheatsheet',
+    description: 'Interactive DSA cheatsheet with code examples and diagrams.',
+    siteName: 'DSA Cheatsheet',
     images: [
       {
         url: siteConfig.ogImage,
@@ -48,10 +48,9 @@ export const defaultMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
-    creator: '@yourusername', // Replace with your Twitter handle
+    title: 'DSA Cheatsheet',
+    description: 'Interactive DSA cheatsheet with code examples and diagrams.',
+    images: ['https://dsacheatsheet.vercel.app/og-image.png'],
   },
   icons: {
     icon: '/favicon.ico',
@@ -59,5 +58,5 @@ export const defaultMetadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/site.webmanifest',
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: new URL('https://dsacheatsheet.vercel.app/'),
 }; 
