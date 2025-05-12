@@ -106,19 +106,7 @@ The easiest deployment option:
 2. Run `npm run build`
 3. Push the generated `dist` folder to the `gh-pages` branch
 
-## Pre-Deployment Checklist
 
-- [x] Fix any React hooks errors
-- [x] Update `.gitignore` to exclude build artifacts
-- [x] Ensure all components render properly on both client and server
-- [x] Test navigation between different sections
-- [x] Verify theme switching works correctly
-- [x] Test the command palette functionality
-- [x] Check mobile responsiveness
-- [x] Update paths if deploying to a subfolder
-- [ ] Complete content listed in TODO.md
-- [ ] Add analytics (optional)
-- [ ] Configure custom domain (if applicable)
 
 ## Sections
 
@@ -130,9 +118,6 @@ The easiest deployment option:
 6. **Problem-Solving Strategies** - Approaches to tackle algorithmic problems
 7. **Practice Recommendations** - Suggestions for effective practice
 
-## Future Improvements
-
-See `TODO.md` for a comprehensive list of planned improvements and content additions.
 
 ## License
 
